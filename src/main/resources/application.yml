@@ -2,7 +2,5 @@ spring:
   application:
     name: eureka-server
 
-  security:
-    user:
-      name: ${SECURITY_USER}
-      password: ${SECURITY_PASSWORD}
+  config:
+    import: optional:configserver:${CONFIG_URI}
