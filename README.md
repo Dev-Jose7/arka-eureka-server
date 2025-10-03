@@ -2,15 +2,15 @@
 
 Este microservicio actúa como **servidor de registro y descubrimiento de servicios** para la plataforma Arka. Está construido con **Spring Cloud Netflix Eureka Server** y permite que los microservicios del ecosistema se registren y se descubran dinámicamente entre sí.
 
-Actualmente, el Eureka Server **no consume configuración desde un Config Server externo**, sino que utiliza **propiedades locales definidas en su archivo `application.yml`**, facilitando así su despliegue y pruebas en entornos aislados o de desarrollo.
+Actualmente se ha implementado Config Client permitiendo así **consumir su configuración desde un Config Server externo**, obteniendo sus **propiedades de configuración definidas en un archivo llamado `eureka-server.yml`** ubicado en el repositorio privado gestionado por Config Server
 
-Además, se ha añadido soporte para **autenticación básica HTTP (Basic Auth)** mediante **Spring Security**, lo que permite restringir el acceso a los endpoints expuestos por Eureka.
+Cuenta con soporte para **autenticación básica HTTP (Basic Auth)** mediante **Spring Security**, lo que permite restringir el acceso a los endpoints expuestos por Eureka.
 
 ---
 
 ## 🚀 Características
 
-⚙️ Utiliza configuración local mediante `application.yml`.  
+⚙️ Obtiene su configuración mediante Config Server.  
 🔐 Incluye autenticación básica HTTP con Spring Security.  
 🧭 Permite el **descubrimiento dinámico** de servicios registrados.  
 📡 Expone endpoints de monitoreo y estado a través de **Spring Boot Actuator**.  
@@ -18,12 +18,16 @@ Además, se ha añadido soporte para **autenticación básica HTTP (Basic Auth)*
 
 ---
 
-## ⚠️ Microservicio aún en desarrollo
+## 🧩 Tecnologías usadas
 
-Este proyecto se encuentra en una etapa de desarrollo activo (`v0.2.0`).  
-Su comportamiento, estructura y configuración pueden cambiar con frecuencia.  
-**No se recomienda su uso en entornos de producción por el momento.**
+- Java 17
+- Spring Boot 3.x
+- Spring Web
+- Spring Cloud Eureka Server
+- Spring Cloud Config Client
+- Spring Security (Basic Auth)
+- Spring Boot Actuator
 
 ---
 
-📌 Versión actual: `v0.2.0`
+📌 Versión actual: `v1.0.0`
